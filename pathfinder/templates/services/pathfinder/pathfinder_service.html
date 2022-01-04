@@ -3,7 +3,7 @@
 {% endblock %}  
 <tr>
     <td class="text-center">Pathfinder</td>
-    <td class="text-center"><a data-toggle="tooltip" data-placement="top" title="{% for character in characters %}{{character.character.character_name}}{% if not forloop.last %}, {% endif %}{% endfor %}">All Linked Characters</a></td>
+    <td class="text-center">All Linked Character</td>
     <td class="text-center"><a href="{{ PATHFINDER_URL }}">{{ PATHFINDER_NAME }}</a></td>
     <td class="text-center">
     {% if not user.pathfinder %}
