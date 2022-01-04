@@ -1,6 +1,6 @@
 import os
 from setuptools import find_packages, setup
-from esi import __version__
+from pathfinder import __version__
 
 this_directory = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
