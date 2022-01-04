@@ -17,8 +17,10 @@ def update_members(self):
     id_list = []
     for user in users:
         for char in user.user.character_ownerships.all():
-            id_list.append(char.character.character_id)
+            id_list.append(str(char.character.character_id))
+
     id_list = ",".join(id_list)
+
     post_data = {'x-api-key': settings.PATHFINDER_API_KEY, 'character_ids':id_list}
     url = settings.PATHFINDER_URL + "api_write.php"
     r = requests.post(url, data=post_data)
