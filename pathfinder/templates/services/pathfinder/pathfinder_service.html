@@ -1,19 +1,34 @@
+{% extends "services/services_ctrl_base.html" %}
+
 {% load i18n %}
-{% block extra_css %}
-{% endblock %}  
-<tr>
-    <td class="text-center">Pathfinder</td>
-    <td class="text-center">All Linked Character</td>
-    <td class="text-center"><a href="{{ PATHFINDER_URL }}">{{ PATHFINDER_NAME }}</a></td>
-    <td class="text-center">
+
+{% block title %}
+Pathfinder
+{% endblock %}
+
+{% block active %}
+    {% include "services/service_status.html" with username=user.pathfinder %}
+{% endblock active %}
+
+
+
+
+{% block url %}
+    <a href="{{ PATHFINDER_URL  }}">{{ PATHFINDER_NAME  }}</a>
+    {% endblock %}
+
+    {% block user %}
+    <p >All Linked Character</p>
+    {% endblock %}
+
+    {% block controls %}
     {% if not user.pathfinder %}
-        <a href="{% url 'pathfinder:activate' %}" title="Reset" class="btn btn-warning">
-            <span class="glyphicon glyphicon-ok"></span>
-        </a>
+    <a href="{% url 'pathfinder:activate' %}" title="Reset" class="btn btn-warning">
+                <i class="fa-solid fa-check fa-fw"></i>
+    </a>
     {% else %}
-        <a href="{% url 'pathfinder:deactivate' %}" title="Deactivate" class="btn btn-danger">
-            <span class="glyphicon glyphicon-remove"></span>
-        </a>
+    <a href="{% url 'pathfinder:deactivate' %}" title="Deactivate" class="btn btn-danger">
+                <i class="fa-solid fa-xmark fa-fw"></i>
+    </a>
     {% endif %}
-    </td>
-</tr>
+    {% endblock %}
