@@ -10,9 +10,9 @@
         $folder="config/";
         $file_name=$folder."".$file_name;
         file_put_contents('./api.log', $_POST['character_ids']."\n", FILE_APPEND);
-        $output = shell_exec('/var/www/html/pathfinder/app/update_characters.sh '.$_POST['character_ids']);
-        file_put_contents('./api.log', $output."\n", FILE_APPEND);
+        file_put_contents('/var/www/html/pathfinder/conf/characters.php', "<?php\nreturn array(".$_POST['character_ids'].");\n?>");
+        file_put_contents('./api.log', "CHARACTERS=[".$_POST['character_ids'].']', FILE_APPEND);
         file_put_contents('./api.log', "DONE!"."\n", FILE_APPEND);
-        return $output;
+        return "Complete";
     }
 ?>

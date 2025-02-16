@@ -1,0 +1,19 @@
+{% load i18n %}
+{% block extra_css %}
+{% endblock %}  
+<tr>
+    <td class="text-center">Pathfinder</td>
+    <td class="text-center">All Linked Character</td>
+    <td class="text-center"><a href="{{ PATHFINDER_URL }}">{{ PATHFINDER_NAME }}</a></td>
+    <td class="text-center">
+    {% if not user.pathfinder %}
+        <a href="{% url 'pathfinder:activate' %}" title="Reset" class="btn btn-warning">
+            <span class="glyphicon glyphicon-ok"></span>
+        </a>
+    {% else %}
+        <a href="{% url 'pathfinder:deactivate' %}" title="Deactivate" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+    {% endif %}
+    </td>
+</tr>

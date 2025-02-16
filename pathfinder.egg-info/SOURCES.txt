@@ -1,6 +1,17 @@
+MANIFEST.in
 README.md
 setup.py
+pathfinder/__init__.py
+pathfinder/admin.py
+pathfinder/auth_hooks.py
+pathfinder/models.py
+pathfinder/tasks.py
+pathfinder/urls.py
+pathfinder/views.py
 pathfinder.egg-info/PKG-INFO
 pathfinder.egg-info/SOURCES.txt
 pathfinder.egg-info/dependency_links.txt
 pathfinder.egg-info/top_level.txt
+pathfinder/migrations/0001_initial.py
+pathfinder/migrations/__init__.py
+pathfinder/templates/services/pathfinder/pathfinder_service.html
